@@ -4,6 +4,7 @@ import sv_ttk
 
 from tkinter import ttk
 from customtkinter import CTkFont
+from commands import upload, callback
 
 
 window = tk.Tk()
@@ -13,8 +14,10 @@ window.title("audible")
 window.eval('tk::PlaceWindow . center')
 
 link = ttk.Entry(window)
-submit = ttk.Button(window, text="Submit")
+submit = ttk.Button(window, text="Submit", command=lambda:callback(link))
 or_txt = ttk.Label(window, text=" or ", anchor='center', font=CTkFont(slant="italic"))
+
+epub_upload = ttk.Button(window, text ='Upload an ePub (.epub)', command = lambda:upload())
 
 link.place(relx=.5,
            rely=.4,
@@ -29,6 +32,12 @@ or_txt.place(relx=.5,
              rely=.60,
              anchor='center'
             )
+
+epub_upload.place(relx=.5,
+                  rely=.68, 
+                  anchor='center'
+                 )
+
 sv_ttk.set_theme("dark")
 
 window.mainloop()

@@ -1,16 +1,10 @@
 import tkinter as tk
-
 import customtkinter as ct
 
-from customtkinter import CTkButton, CTkEntry, CTkLabel, CTkFont
+
 from tkinter import ttk
-from tkinter.filedialog import askopenfile 
-
-def callback():
-    print("test")
-
-def upload():
-    path = askopenfile(mode='r', filetypes=[('ePub File', '*epub')])
+from customtkinter import CTkButton, CTkEntry, CTkLabel, CTkFont
+from commands import upload, callback
 
 window = ct.CTk()
 window.geometry("540x400")
@@ -23,7 +17,7 @@ epub_upload = CTkButton(window, text ='Upload an ePub (.epub)', command = lambda
 link = CTkEntry(window, width=300)
 label = CTkLabel(window, text="Paste Link to ePub:", anchor='center')
 or_txt = CTkLabel(window, text="or ", anchor='center', font=CTkFont(slant="italic"))
-submit = CTkButton(window, text="Submit", anchor='center', width=10, command=callback)
+submit = CTkButton(window, text="Submit", anchor='center', width=10, command=lambda:callback(link))
 
 label.place(
             relx=.5,
