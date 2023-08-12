@@ -6,8 +6,6 @@ from tkinter import ttk
 from customtkinter import CTkFont
 from commands import upload, callback
 
-style = ttk.Style()
-
 window = tk.Tk()
 window.geometry("540x400")
 window.resizable(False,False)
@@ -16,7 +14,7 @@ window.eval('tk::PlaceWindow . center')
 
 label = ttk.Label(window, text="Paste Link to ePub:", font=CTkFont(slant="roman"), anchor='center')
 link = ttk.Entry(window, width=40)
-submit = ttk.Button(window, text="Submit", style='W.TButton',command=lambda:callback(link))
+submit = ttk.Button(window, text="Submit",command=lambda:callback(link))
 or_txt = ttk.Label(window, text=" or ", anchor='center', font=CTkFont(slant="italic"))
 
 epub_upload = ttk.Button(window, text='Upload an ePub (.epub)', command=lambda:upload())
