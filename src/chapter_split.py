@@ -1,5 +1,6 @@
 import ebooklib
 
+from bs4 import BeautifulSoup
 from ebooklib import epub
 
 def extract_chapters(path):
@@ -12,4 +13,6 @@ def extract_chapters(path):
 
     return [item for item in book.get_items() if item.get_type() == ebooklib.ITEM_DOCUMENT]
 
-extract_chapters("src/test.epub")
+chapters = extract_chapters("src/test2.epub")
+
+print(chapters)
