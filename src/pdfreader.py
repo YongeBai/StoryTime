@@ -7,14 +7,18 @@ from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfparser import PDFParser
 
-output_string = StringIO()
-with open('Einstein_Walter_Isaacson_Z-Library.pdf', 'rb') as in_file:
+out = StringIO()
+
+with open('src/Einstein_Walter_Isaacson_Z-Library.pdf', 'rb') as in_file:
     parser = PDFParser(in_file)
     doc = PDFDocument(parser)
     rsrcmgr = PDFResourceManager()
-    device = TextConverter(rsrcmgr, output_string, laparams=LAParams())
+    codec = 'utf-8'
+    device = TextConverter(rsrcmgr, out, codec=codec, laparams=LAParams())
     interpreter = PDFPageInterpreter(rsrcmgr, device)
+    
     for page in PDFPage.create_pages(doc):
         interpreter.process_page(page)
 
-print(output_string.getvalue())
+    with open('output.txt', 'a', encoding=codec) as f:
+        f.writelines(out.getvalue())
