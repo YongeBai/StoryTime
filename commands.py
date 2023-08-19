@@ -5,7 +5,7 @@ def callback(link):
     print(link.get()) 
 
 def upload():
-    path = askopenfile(mode='r', filetypes=[('ePub File', '*epub')])
+    path = askopenfile(mode='r', filetypes=[('ePub File', '.epub'), ('PDF File', '.pdf')])
 
 def center(win):
     win.update_idletasks()
