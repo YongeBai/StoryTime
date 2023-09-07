@@ -1,5 +1,7 @@
-tkinter
 customtkinter
 sv-ttk
 pdfminer.six
 music-tag
+torch
+torchvision
+torchaudio
