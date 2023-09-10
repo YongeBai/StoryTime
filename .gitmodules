@@ -1,3 +1,6 @@
 [submodule "ai-voice-cloning"]
 	path = ai-voice-cloning
 	url = https://git.ecker.tech/yongebai/ai-voice-cloning.git
+[submodule "RVC"]
+	path = RVC
+	url = https://github.com/YongeBai/RVC.git
