@@ -5,3 +5,5 @@ music-tag
 torch
 torchvision
 torchaudio
+bs4
+epublib
