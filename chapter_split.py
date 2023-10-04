@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from ebooklib import epub
 import re 
 
+
 def epub2html(path: str) -> list:
     book = epub.read_epub(path)
     chapters = []
@@ -76,7 +77,6 @@ def extract_chapters(path: str):
     chapters = parse_navigation(nav)
     book_dir = get_book_dir(path)
     
-    i = 0
     for chapter_name, chapter_content_xhtml in chapters:       
         text = extract_chapter_html(chapter_content_xhtml, book)
 
@@ -89,7 +89,6 @@ def extract_chapters(path: str):
 
     print("Done")              
 
-path = "books/Moby_Dick/Moby_Dick.epub"
 
-extract_chapters(path)
+
 

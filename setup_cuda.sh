@@ -1,3 +1,5 @@
+#!/bin/bash
+
 python3 -m venv .venv
 source .venv/bin/activate
 cd ai-voice-cloning
@@ -9,6 +11,7 @@ cd ..
 pip install -r ./requirements.txt
 
 # put inference code stuff here
+./run.sh $1
 
 deactivate
 
